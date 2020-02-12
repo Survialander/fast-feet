@@ -1,8 +1,12 @@
 module.exports = {
-  username: 'root',
+  username: 'default',
   password: 'secret',
   database: 'fastfeet',
   host: 'localhost',
-  dialect: 'pgsql',
-  operatorsAliases: false
+  dialect: 'postgres',
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
+  }
 };
