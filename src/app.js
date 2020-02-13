@@ -1,23 +1,25 @@
 import express from 'express';
 import routes from './routes';
+import './database';
+
 import authMiddleware from './app/middlewares/auth.js' 
 
 const app = express();
 
 class App {
   constructor() {
-    this.express = express();
+    this.server = express();
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
-    this.express.use(express.json());
+    this.server.use(express.json());
   }
 
   routes() {
-    this.express.use(routes);
+    this.server.use(routes);
   }
 }
 
-export default new App().express;
+export default new App().server;
