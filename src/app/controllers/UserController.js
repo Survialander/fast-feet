@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 
 class UserController {
   async index(req, res) {
-    await res.send('usuarios')
+    
   }
 
   async store(req, res) {

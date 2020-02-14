@@ -9,7 +9,7 @@ const routes = Router();
 routes.post('/login', SessionController.store);
 
 routes.use(auth);
-routes.post('/recipients', RecipientsController.index);
+routes.post('/recipients', RecipientsController.store);
 
 
 export default routes;
