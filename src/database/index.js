@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import config from '../config/database';
-import User from '../app/models/User'
-import Recipients from '../app/models/Recipients'
+import User from '../app/models/User';
+import Recipients from '../app/models/Recipients';
 
 const models = [User, Recipients];
 

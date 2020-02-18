@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import tokenConfig from '../../config/tokenConfigs';
 import { promisify }  from 'util';
 
-export default (req, res, next) => {  
+export default async (req, res, next) => {  
   const { authorization } = req.headers;
   
   if(!authorization) {
@@ -14,7 +14,7 @@ export default (req, res, next) => {
   const [, token] = authorization.split(' ');
   
   try {
-    const decoded = promisify(jwt.verify)(token, tokenConfig.key)
+    const decoded = await promisify(jwt.verify)(token, tokenConfig.key);
     req.userId = decoded.id
 
     return next();

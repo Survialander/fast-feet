@@ -3,16 +3,14 @@ import User from '../models/User';
 import tokenConfig from '../../config/tokenConfigs';
 
 class SessionController {
-  async index(req, res) {
-    
-  }
-
   async store(req, res) {
     const { email, password } = req.body;
 
     if(!email) {
       return res.status(400).json({ message: 'Email not given.' });
-    } else if (!password) {
+    } 
+    
+    if (!password) {
       return res.status(400).json({ message: 'Password not given.' });
     }
     
@@ -38,14 +36,6 @@ class SessionController {
       })
     })
   } 
-
-  async update(req, res) {
-
-  }
-
-  async delete(req, res) {
-
-  }
 }
 
 export default new SessionController();

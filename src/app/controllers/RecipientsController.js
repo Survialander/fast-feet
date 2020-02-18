@@ -1,11 +1,7 @@
-import Recipients from '../models/Recipients';
 import * as Yup from 'yup'; 
+import Recipients from '../models/Recipients';
 
 class RecipientsController {
-  async index(req, res) {
-    
-  }
-
   async store(req, res) {
     const schema = Yup.object().shape({
       street: Yup.string().required(),
@@ -25,14 +21,6 @@ class RecipientsController {
     const { street, cep, state, number, city, complement } = await Recipients.create(req.body);
     
     return res.status(200).json({ street, cep, state, number, city, complement });
-  }
-
-  async update(req, res) {
-
-  }
-
-  async delete(req, res) {
-
   }
 }
 
